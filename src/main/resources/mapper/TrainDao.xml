@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.transport.dao.TrainDao">
+
+    <resultMap type="com.transport.entity.Train" id="TrainMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="trainNumber" column="train_number" jdbcType="VARCHAR"/>
+        <result property="site" column="site" jdbcType="VARCHAR"/>
+        <result property="carriageNum" column="carriage_num" jdbcType="INTEGER"/>
+        <result property="bearing" column="bearing" jdbcType="NUMERIC"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <association property="type"
+                     select="com.transport.dao.TrainTypeDao.queryById"
+                     column="type" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TrainMap">
+        select
+          id, train_number, type, site, carriage_num, bearing, created_time
+        from transport.train
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TrainMap">
+        select
+          id, train_number, type, site, carriage_num, bearing, created_time
+        from transport.train
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TrainMap">
+        select
+        id, train_number, type, site, carriage_num, bearing, created_time
+        from transport.train
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainNumber != null and trainNumber != ''">
+                and train_number like concat('%',#{trainNumber},'%')
+            </if>
+            <if test="type != null">
+                and type = #{type.id}
+            </if>
+            <if test="site != null and site != ''">
+                and site = #{site}
+            </if>
+            <if test="carriageNum != null">
+                and carriage_num = #{carriageNum}
+            </if>
+            <if test="bearing != null">
+                and bearing = #{bearing}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into transport.train(train_number, type, site, carriage_num, bearing, created_time)
+        values (#{trainNumber}, #{type.id}, #{site}, #{carriageNum}, #{bearing}, #{createdTime})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update transport.train
+        <set>
+            <if test="trainNumber != null and trainNumber != ''">
+                train_number = #{trainNumber},
+            </if>
+            <if test="type != null">
+                type = #{type.id},
+            </if>
+            <if test="site != null and site != ''">
+                site = #{site},
+            </if>
+            <if test="carriageNum != null">
+                carriage_num = #{carriageNum},
+            </if>
+            <if test="bearing != null">
+                bearing = #{bearing},
+            </if>
+            <if test="createdTime != null">
+                created_time = #{createdTime},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from transport.train where id = #{id}
+    </delete>
+
+    <!--通过条件查询数据条数-->
+    <select id="count" resultType="java.lang.Integer">
+        select count(*) from transport.train
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="trainNumber != null and trainNumber != ''">
+                and train_number = #{trainNumber}
+            </if>
+            <if test="type != null">
+                and type = #{type.id}
+            </if>
+            <if test="site != null and site != ''">
+                and site = #{site}
+            </if>
+            <if test="carriageNum != null">
+                and carriage_num = #{carriageNum}
+            </if>
+            <if test="bearing != null">
+                and bearing = #{bearing}
+            </if>
+            <if test="createdTime != null">
+                and created_time = #{createdTime}
+            </if>
+        </where>
+    </select>
+
+</mapper>
