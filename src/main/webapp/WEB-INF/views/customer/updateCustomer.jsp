@@ -40,9 +40,7 @@
 				var tel = $("#tel");
 				var address = $("#address");
 				var birthday = $("#birthday");
-				var goods_num = $("#goods_num");
 				var star = $("#star");
-				var deal = $("#deal");
 				var description = $("#description");
 				var msg = "";
 				if ($.trim(name.val()) == ""){
@@ -66,15 +64,9 @@
 				}else if (!/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,5}$/.test($.trim(email.val()))){
 					msg = "邮箱格式不正确！";
 					email.focus();
-				}else if ($.trim(goods_num.val()) == ""){
-					msg = "货物数量不能为空！";
-					goods_num.focus();
 				}else if ($.trim(star.val()) == ""){
 					msg = "星级不能为空！";
 					star.focus();
-				}else if ($.trim(deal.val()) == ""){
-					msg = "交易额不能为空！";
-					deal.focus();
 				}
 				if (msg != ""){
 					$.ligerDialog.error(msg);
@@ -128,7 +120,6 @@
 							</tr>
 							<tr>
 								<td class="font3 fftd">邮&nbsp;&nbsp;箱：<input name="email" id="email" size="20" value="${customer.email}"/></td>
-								<td class="font3 fftd">货物数量：<input name="goodsNum" id="goods_num" size="20" value="${customer.goodsNum}"/></td>
 							</tr>
 							<tr><td class="main_tdbor"></td><td class="main_tdbor"></td></tr>
 
@@ -143,7 +134,6 @@
 								</select>
 								</td>
 								<td class="font3 fftd">
-									交易额（万）：<input name="deal" id="deal" size="20" value="${customer.deal}"/>
 								</td>
 							</tr>
 							<tr><td class="main_tdbor"></td><td class="main_tdbor"></td></tr>

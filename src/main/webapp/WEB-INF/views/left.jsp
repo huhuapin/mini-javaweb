@@ -74,7 +74,7 @@
 		  <tr><td height="2"></td></tr>
 		 
 		  <tr valign="top"><td height="100%" align="center"><div class="copycct"><br /><strong>湖南工业大学@姚永明</strong><br> <a
-				  href="http://www.hut.edu.cn/">http://www.hut.edu.cn/</a> </div></td></tr>
+				  href="http://www.hut.edu.cn/" target="_blank">http://www.hut.edu.cn/</a> </div></td></tr>
 		  <tr><td height="10"><img src="${ctx}/images/left_nav_bottom.gif" height="10"></img></td></tr>
 		  <tr><td height="10" bgcolor="#e5f0ff">&nbsp;</td></tr>
 		</table>

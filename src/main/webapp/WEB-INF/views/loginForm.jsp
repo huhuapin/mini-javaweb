@@ -57,15 +57,15 @@
 		   
 		   var msg = "";
 		   
-		   if(!/^\w{4,20}$/.test(loginname)){
-			     msg = "登录名长度必须是6~20之间";
-		   }else if(!/^\w{4,20}$/.test(password)){
-			     msg = "密码长度必须是6~20之间";
-		   }
-		   if(msg !=""){
-			   $.ligerDialog.error(msg);
-			   return;
-		   }
+		   // if(!/^\w{4,20}$/.test(loginname)){
+			//      msg = "登录名长度必须是6~20之间";
+		   // }else if(!/^\w{4,20}$/.test(password)){
+			//      msg = "密码长度必须是6~20之间";
+		   // }
+		   // if(msg !=""){
+			//    $.ligerDialog.error(msg);
+			//    return;
+		   // }
 		   /** 提交表单 */
 		   $("#loginForm").submit();
 		   
@@ -94,7 +94,7 @@
 					<span>&nbsp;</span> 
 					<c:choose>
 						<c:when test="${requestScope.message == null }">
-							<span style="padding-top: 5px">允许以中文名称登录</span>
+							<span style="padding-top: 5px">请输入账号密码</span>
 						</c:when>
 						<c:otherwise>
 							<span style="padding-top: 5px"><font color="red">${requestScope.message}</font></span>
@@ -128,9 +128,6 @@
 							登录 <i class="m-icon-swapright m-icon-white"></i>
 						</button>
 				</div>
-			</div>
-			<div class="page-footer" style="color: #fff">
-				姚永明 <br>
 			</div>
 		</form>
 	</div>

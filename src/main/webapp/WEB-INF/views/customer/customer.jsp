@@ -118,9 +118,7 @@
 			  <td>联系方式</td>
 			  <td>地址</td>
 			  <td>邮箱</td>
-			  <td>货物数量</td>
 			  <td>星级</td>
-			  <td>交易额(万)</td>
 				<td>简介</td>
 			  <td align="center">操作</td>
 			</tr>
@@ -140,9 +138,7 @@
 					  <td>${customer.tel }</td>
 					  <td>${customer.address }</td>
 					  <td>${customer.email }</td>
-					  <td>${customer.goodsNum }</td>
 					  <td>${customer.star }</td>
-					  <td>${customer.deal}</td>
 					  <td>${customer.description}</td>
 					  <td align="center" width="40px;"><a href="${ctx}/customer/update?id=${customer.id}">
 							<img title="修改" src="${ctx}/images/update.gif"/></a>

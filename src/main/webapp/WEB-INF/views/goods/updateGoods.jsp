@@ -94,7 +94,35 @@
 
 
 					<tr><td class="font3 fftd">货物类型：
-						<input type="text" name="type" size="30" id="type" value="${goods.type}">
+						<select name="type" id="type">
+							<option value="煤" <c:if test="${goods.type == '煤'}"> selected </c:if>> 煤</option>
+							<option value="石油" <c:if test="${goods.type == '石油'}"> selected </c:if>> 石油</option>
+							<option value="焦炭" <c:if test="${goods.type == '焦炭'}"> selected </c:if>> 焦炭</option>
+							<option value="金属矿石" <c:if test="${goods.type == '金属矿石'}"> selected </c:if>> 金属矿石</option>
+							<option value="钢铁及有色金属" <c:if test="${goods.type == '钢铁及有色金属'}"> selected </c:if>> 钢铁及有色金属</option>
+							<option value="非金属矿石" <c:if test="${goods.type == '非金属矿石'}"> selected </c:if>> 非金属矿石</option>
+							<option value="磷矿石" <c:if test="${goods.type == '磷矿石'}"> selected </c:if>> 磷矿石</option>
+							<option value="矿物性建筑材料" <c:if test="${goods.type == '矿物性建筑材料'}"> selected </c:if>> 矿物性建筑材料</option>
+							<option value="水泥" <c:if test="${goods.type == '水泥'}"> selected </c:if>> 水泥</option>
+							<option value="木材" <c:if test="${goods.type == '木材'}"> selected </c:if>> 木材</option>
+							<option value="粮食" <c:if test="${goods.type == '粮食'}"> selected </c:if>> 粮食</option>
+							<option value="棉花" <c:if test="${goods.type == '棉花'}"> selected </c:if>> 棉花</option>
+							<option value="化肥及农药" <c:if test="${goods.type == '化肥及农药'}"> selected </c:if>> 化肥及农药</option>
+							<option value="盐" <c:if test="${goods.type == '盐'}"> selected </c:if>> 盐</option>
+							<option value="化工品" <c:if test="${goods.type == '化工品'}"> selected </c:if>> 化工品</option>
+							<option value="金属制品" <c:if test="${goods.type == '金属制品'}"> selected </c:if>> 金属制品</option>
+							<option value="工业机械" <c:if test="${goods.type == '工业机械'}"> selected </c:if>> 工业机械</option>
+							<option value="电子、电气机械" <c:if test="${goods.type == '电子、电气机械'}"> selected </c:if>> 电子、电气机械</option>
+							<option value="农业机具" <c:if test="${goods.type == '农业机具'}"> selected </c:if>> 农业机具</option>
+							<option value="鲜活货物" <c:if test="${goods.type == '鲜活货物'}"> selected </c:if>> 鲜活货物</option>
+							<option value="农副产品" <c:if test="${goods.type == '农副产品'}"> selected </c:if>> 农副产品</option>
+							<option value="饮食品及烟草制品" <c:if test="${goods.type == '饮食品及烟草制品'}"> selected </c:if>> 饮食品及烟草制品</option>
+							<option value="纺织品。皮革、皮毛及其制品" <c:if test="${goods.type == '纺织品。皮革、皮毛及其制品'}"> selected </c:if>> 纺织品。皮革、皮毛及其制品</option>
+							<option value="纸及文教用品" <c:if test="${goods.type == '纸及文教用品'}"> selected </c:if>> 纸及文教用品</option>
+							<option value="医药品" <c:if test="${goods.type == '医药品'}"> selected </c:if>> 医药品</option>
+							<option value="其他货物" <c:if test="${goods.type == '其他货物'}"> selected </c:if>> 其他货物</option>
+						</select>
+<%--						<input type="text" name="type" size="30" id="type" value="${goods.type}">--%>
 					</td></tr>
 					<tr><td class="main_tdbor"></td></tr>
 
