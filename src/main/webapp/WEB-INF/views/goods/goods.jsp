@@ -23,7 +23,7 @@
 	<script src="${ctx }/js/ligerUI/js/plugins/ligerResizable.js" type="text/javascript"></script>
 	<style>
 		img {
-			max-height: 200px;
+			max-height: 120px;
 		}
 	</style>
 	<script type="text/javascript">
@@ -117,7 +117,35 @@
 					  <tr>
 					    <td class="font3">
 					    	货物名称：<input type="text" name="name" />
-							货物类型：<input type="text" name="type" />
+							货物类型：
+							<select name="type" id="type">
+							<option value="煤">煤</option>
+							<option value="石油">石油</option>
+							<option value="焦炭">焦炭</option>
+							<option value="金属矿石">金属矿石</option>
+							<option value="钢铁及有色金属">钢铁及有色金属</option>
+							<option value="非金属矿石">非金属矿石</option>
+							<option value="磷矿石">磷矿石</option>
+							<option value="矿物性建筑材料">矿物性建筑材料</option>
+							<option value="水泥">水泥</option>
+							<option value="木材">木材</option>
+							<option value="粮食">粮食</option>
+							<option value="棉花">棉花</option>
+							<option value="化肥及农药">化肥及农药</option>
+							<option value="盐">盐</option>
+							<option value="化工品">化工品</option>
+							<option value="金属制品">金属制品</option>
+							<option value="工业机械">工业机械</option>
+							<option value="电子、电气机械">电子、电气机械</option>
+							<option value="农业机具">农业机具</option>
+							<option value="鲜活货物">鲜活货物</option>
+							<option value="农副产品">农副产品</option>
+							<option value="饮食品及烟草制品">饮食品及烟草制品</option>
+							<option value="纺织品。皮革、皮毛及其制品">纺织品。皮革、皮毛及其制品</option>
+							<option value="纸及文教用品">纸及文教用品</option>
+							<option value="医药品">医药品</option>
+							<option value="其他货物">其他货物</option>
+						</select>
 					    	<input type="submit"  value="搜索"/>
 					    	<input type="button" id="delete" value="删除">
 					    </td>
@@ -152,7 +180,7 @@
 					  <td><img src="${ctx}/${goods.image}" alt="货物图片"></td>
 					  <td>
 						  <c:forEach items="${goods.customers}" var="customer">
-							  <a href="">${customer.name} </a>
+							  <a href="${ctx}/customer/update?id=${customer.id}">${customer.name} </a>
 						  </c:forEach>
 					  </td>
 					 <td align="center" width="40px;"><a href="${ctx }/goods/update?id=${goods.id}">
