@@ -119,6 +119,7 @@
 					    	货物名称：<input type="text" name="name" />
 							货物类型：
 							<select name="type" id="type">
+							<option value=""></option>
 							<option value="煤">煤</option>
 							<option value="石油">石油</option>
 							<option value="焦炭">焦炭</option>
